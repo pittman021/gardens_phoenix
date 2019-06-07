@@ -1,0 +1,25 @@
+<h3><%= @contact.first_name %> <%= @contact.last_name %></h6>
+<h5><%= @contact.address %></h5>
+<h5>Birthday: <%= @contact.date_of_birth %></h5>
+<br>
+<hr>
+
+
+<h5>Add Gift</h5>
+    <div class="input-field">
+        <input class="title" value="" placeholder="gift title" type="text" name="title">
+    </div>
+    <div class="input-field">
+        <input class="url" value="" placeholder="url" type="text" name="url">
+    </div>
+<button class="btn">Add Gift</button>
+<br>
+<h6>Current Gifts</h6>
+<br>
+<ul class="collection"></ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        window.createSocket(<%= @contact.id %>)
+    })
+</script>

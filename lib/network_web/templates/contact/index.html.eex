@@ -1,0 +1,26 @@
+<table class="list contact-list">
+        <thead>
+          <tr>
+            <th class="list-header">Name</th>
+            <th class="contact-list-header">Birthday</th>
+            <th class="contact-list-header">Address</th>
+            <th class="contact-list-header">Action</th>
+          </tr>
+        </thead>
+       <tbody>
+          <%= for contact <- @contacts do  %>
+            <td><%= contact.first_name %> <%= contact.last_name %>
+            <td><%= contact.date_of_birth %></td>
+            <td><%= contact.address %></td>
+            <td><%= link "View", to: Routes.contact_path(@conn, :show, contact) %> | <%= link "Edit", to: Routes.contact_path(@conn, :edit, contact) %> 
+          </tr>
+            <% end %>
+       </tbody>
+
+       <div class="fixed-action-btn">
+          <%= link to: Routes.contact_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light brown darken-4" do %>
+            <i class="material-icons">add</i>
+        <% end %>
+      </div>
+
+         

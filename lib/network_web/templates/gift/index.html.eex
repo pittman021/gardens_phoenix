@@ -1,0 +1,18 @@
+  <div class="row">
+<%= for gift <- @gifts do %>
+
+    <div class="col s12 m4">
+      <div class="card ">
+        <div class="card-content">
+          <span class="card-title"><%= gift.title %></span>
+          <p>for <%= gift.contact.first_name %> <%= gift.contact.last_name %></p>
+        </div>
+        <div class="card-action">
+          <a target="_blank" href="http://<%= gift.url %>">Link</a>
+          
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+    </div>

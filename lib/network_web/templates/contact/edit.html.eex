@@ -1,0 +1,21 @@
+<%= form_for @changeset, Routes.contact_path(@conn, :update, @contact), fn f -> %>
+    <div class="form-group">
+    <%= text_input f, :first_name, placeholder: "First Name", class: "input-field" %>
+    <%= text_input f, :last_name, placeholder: "Last Name", class: "input-field" %>
+    <%= text_input f, :date_of_birth, class: "datepicker" %>
+    <%= text_input f, :address, placeholder: "Address", class: "form-control" %>
+  
+    </div>
+     <%= submit "Update Contact", class: "btn btn-primary" %>
+<% end %>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var year = new Date().getFullYear();
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, {
+        yearRange: [1900, year],
+        format: 'yyyy-mm-dd'
+    });
+  });
+</script>
