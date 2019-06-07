@@ -20,6 +20,7 @@ defmodule NetworkWeb.Router do
     get "/", PageController, :index
     get "/login", PageController, :login
     get "/gifts", GiftController, :index
+    delete "/gifts", GiftController, :delete
 
     resources "/contacts", ContactController
 

@@ -5,11 +5,11 @@
       <div class="card ">
         <div class="card-content">
           <span class="card-title"><%= gift.title %></span>
-          <p>for <%= gift.contact.first_name %> <%= gift.contact.last_name %></p>
+          <p>for <%= gift.contact.first_name %> <%= gift.contact.last_name %>
         </div>
         <div class="card-action">
           <a target="_blank" href="http://<%= gift.url %>">Link</a>
-          
+          <%= link "Delete", to: Routes.gift_path(@conn, :delete, id: gift.id), method: :delete, data: [confirm: "Are you sure?"] %>
         </div>
       </div>
     </div>
