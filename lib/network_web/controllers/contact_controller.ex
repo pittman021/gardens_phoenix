@@ -94,13 +94,13 @@ defmodule NetworkWeb.ContactController do
 
     # end
 
-    # def delete(conn, %{"id" => topic_id}) do
-    #   Repo.get!(Topic, topic_id) |> Repo.delete!
+    def delete(conn, %{"id" => contact_id}) do
+      Repo.get!(Contact, contact_id) |> Repo.delete!
 
-    #   conn
-    #   |> put_flash(:info, "Topic Deleted")
-    #   |> redirect(to: Routes.topic_path(conn, :index))
-    # end
+      conn
+      |> put_flash(:info, "Contact Deleted")
+      |> redirect(to: Routes.contact_path(conn, :index))
+    end
 
     # def check_topic_owner(conn, _params) do
     #   %{params: %{"id" => topic_id }} = conn # WTF

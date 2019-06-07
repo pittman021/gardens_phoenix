@@ -12,7 +12,7 @@
             <td><%= contact.first_name %> <%= contact.last_name %>
             <td><%= contact.date_of_birth %></td>
             <td><%= contact.address %></td>
-            <td><%= link "View", to: Routes.contact_path(@conn, :show, contact) %> | <%= link "Edit", to: Routes.contact_path(@conn, :edit, contact) %> 
+            <td><%= link "View", to: Routes.contact_path(@conn, :show, contact) %> | <%= link "Edit", to: Routes.contact_path(@conn, :edit, contact) %> | <%= link "Delete", to: Routes.contact_path(@conn, :delete, contact), method: :delete, data: [confirm: "This is a person. Are you really sure you want to delete her?"] %> 
           </tr>
             <% end %>
        </tbody>
