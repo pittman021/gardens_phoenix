@@ -5,6 +5,7 @@ defmodule NetworkWeb.UserSocket do
   channel "gifts:*", Network.GiftsChannel
 
   transport :websocket, Phoenix.Transports.WebSocket
+    timeout: 45_000
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
