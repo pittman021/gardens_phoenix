@@ -2,7 +2,7 @@ defmodule NetworkWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :network
 
   socket "/socket", NetworkWeb.UserSocket,
-    websocket: true
+    websocket: true,
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
